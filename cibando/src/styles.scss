@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+body {
+font-family: 'Montserrat', sans-serif;
+}
+
+ngb-carousel.carousel.slide {
+margin-top:-19px;
+margin-bottom: 20px;
+
+
+.carousel-caption{
+top: 26rem;
+
+  h3{
+    font-family:"Homemade Apple",cursive;
+    font-size: 40px;
+    text-shadow: black 2px 2px 3px;
+  }
+
+  h2{
+   font-size:10px ;
+  text-shadow:black 2 px 2px 3px ;
+  font-weight:lighter ;
+  }
+}
+
+.carousel-control-next, .carousel-control-prev {
+opacity: 1!important;
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+  width: 4rem;
+  height: 4rem;
+  }
+}
+
+
+}
+
+#main-container{
+padding: 15px;
+
+p{
+text-align: justify;
+font-size: 13px;
+
+}
+
+
+.testo-evidenziato{
+background-color: yellow;
+width: 530px;
+}
+
+}
+footer{
+  height: 100px;
+  background-color: #8e210b!important;
+}
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
