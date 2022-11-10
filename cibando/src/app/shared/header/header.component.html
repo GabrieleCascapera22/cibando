@@ -1,0 +1,27 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" routerLink="home">
+      <img src="../assets/images/icona-cibando.png" class="logo" alt="logo cibando">
+     <span>Cibando</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" routerLink="home">
+          <fa-icon [icon]="iconaHome"></fa-icon>
+          Home</a>
+        <a class="nav-item nav-link" routerLink="ricette" >
+          <fa-icon [icon]="iconaScheda"></fa-icon>
+          Ricette</a>
+        <a class="nav-item nav-link"  >
+          <fa-icon [icon]="iconaMail"></fa-icon>
+          Contatti</a>
+        <a class="nav-item nav-link  ">
+          <fa-icon [icon]="iconaRegistrati"></fa-icon>
+          Regisrati</a>
+      </div>
+    </div>
+  </nav>
+</header>
