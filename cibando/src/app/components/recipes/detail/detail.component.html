@@ -1,14 +1,17 @@
 <div class="container-fluid">
-<div class="image-container" [ngStyle]="{'background-image':'url(' +ricetta.image+')'}"></div>
-<div class="container-testo">
-<h2 class="titolo">{{ricetta.title}}</h2>
-<p class="descrizione">{{ricetta.description}}</p>
+  <div
+    class="image-container"
+    [ngStyle]="{ 'background-image': 'url(' + ricetta.image + ')' }"
+  ></div>
+  <div class="container-testo">
+    <h2 class="titolo">{{ ricetta.title }}</h2>
+    <p class="descrizione">{{ ricetta.description }}</p>
+  </div>
+  <div class="difficolta">
+    <strong>difficoltà:</strong>
+    <p class="stelline">stelline</p>
+  </div>
+  <div class="container-data">
+    <p class="data">ricetta publicata il {{ ricetta.date }}</p>
+  </div>
 </div>
-<div class="difficolta"><strong>difficoltà:</strong>
-<p class="stelline">stelline</p>
-</div>
-<div class="container-data">
-  <p class="data">ricetta publicata il {{ricetta.date}}</p>
-</div>
-</div>
-
