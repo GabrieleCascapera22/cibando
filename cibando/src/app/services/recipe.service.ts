@@ -13,4 +13,10 @@ export class RecipeService {
 getRecipes(): Observable<Recipe[]>{
   return of (RECIPES);
 }
+
+getRecipe(id:number):Observable<Recipe | undefined>{
+
+const recipe= RECIPES.find(recipe => recipe._id === id);
+return of (recipe);
+}
 }

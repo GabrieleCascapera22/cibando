@@ -1,0 +1,38 @@
+.container-fluid{
+display:contents;
+.image-container {
+  background-size: cover;
+  height: 450px;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: -19px!important;
+}
+.container-testo{
+  text-align: left;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  .titolo{
+    font-size: 20px!important;
+    margin-top: 16px;
+    color:  #8e210b;
+    font-weight: bold;
+  }
+  .descrizione{
+    opacity: 0.7;
+    font-size: 15px!important;
+  }
+}
+
+.difficolta{
+  margin-left: 20px;
+}
+.container-data{
+  text-align: right;
+  margin-bottom: 60px!important;
+  margin-right: 20px;
+  .data{
+    opacity: 0.7;
+  }
+}
+}
