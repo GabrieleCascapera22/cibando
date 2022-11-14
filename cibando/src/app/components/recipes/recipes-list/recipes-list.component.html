@@ -1,2 +1,8 @@
-<h2>le nostre ricette</h2>
-<app-recipe-card [recipes]="ricette"></app-recipe-card>
+<div class="nostre-ricette">
+  <h2>le nostre ricette</h2>
+  <div class="titolo-ricevuto"  *ngIf="titoloRicevuto">
+    hai cliccato la ricetta: <strong style="color: #8e210b;">{{titoloRicevuto}}</strong>
+  </div>
+</div>
+
+<app-recipe-card [recipes]="ricette" (messaggio)="riceviTitolo($event)"></app-recipe-card>

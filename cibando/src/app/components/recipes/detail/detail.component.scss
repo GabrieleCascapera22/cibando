@@ -26,6 +26,11 @@ display:contents;
 
 .difficolta{
   margin-left: 20px;
+  .star{
+    width: 160px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }
 .container-data{
   text-align: right;
@@ -35,4 +40,17 @@ display:contents;
     opacity: 0.7;
   }
 }
+}
+
+
+.niente-ricetta{
+  height: 350px;
+  .ricetta-non-trovata{
+    cursor: pointer;
+    font-size: 40px;
+    display: block;
+    margin-top: 235px;
+    color: #8e210b;
+    text-align: center;
+  }
 }

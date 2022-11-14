@@ -10,6 +10,9 @@ import { RecipeService } from 'src/app/services/recipe.service';
 })
 export class RecipesListComponent implements OnInit {
   ricette: Recipe[]=[];
+  titoloRicevuto:string;
+
+
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit(): void {
@@ -22,5 +25,17 @@ export class RecipesListComponent implements OnInit {
       }
     })
   }
+  riceviTitolo(e: any){
+    if(!this.titoloRicevuto)
+    {
+      this.titoloRicevuto =e;
+    }else
+    {
+      this.titoloRicevuto='';
+    }
+
+  }
+
+
 
 }

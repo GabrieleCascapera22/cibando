@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="ricetta else notRecipe">
   <div
     class="image-container"
     [ngStyle]="{ 'background-image': 'url(' + ricetta.image + ')' }"
@@ -9,9 +9,20 @@
   </div>
   <div class="difficolta">
     <strong>difficoltà:</strong>
-    <p class="stelline">stelline</p>
+    <div class="row">
+      <img [src]="percorsoDifficolta + ricetta.difficulty+'.png'" class="star" alt="difficoltà">
+    </div>
   </div>
   <div class="container-data">
-    <p class="data">ricetta publicata il {{ ricetta.date }}</p>
+    <p class="data">ricetta publicata il {{ ricetta.date}}</p>
   </div>
 </div>
+
+<ng-template #notRecipe>
+  <div class="niente-ricetta">
+    <h4 class="ricetta-non-trovata" routerLink="home" >Mi dispiace ricetta non trovata<br>clicca per tornare alla home</h4>
+  </div>
+
+</ng-template>
+
+

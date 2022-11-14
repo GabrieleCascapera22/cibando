@@ -11,6 +11,7 @@ import { Recipe } from 'src/app/models/recipe.model';
 })
 export class DetailComponent implements OnInit {
  ricetta: Recipe;
+ percorsoDifficolta = "../../../../assets/images/difficolta-";
 
   constructor(
     private recipeService: RecipeService,
