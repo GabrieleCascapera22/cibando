@@ -9,21 +9,12 @@ import { RecipeService } from 'src/app/services/recipe.service';
   styleUrls: ['./recipes-list.component.scss']
 })
 export class RecipesListComponent implements OnInit {
-  ricette: Recipe[]=[];
   titoloRicevuto:string;
+  page="recipes-list";
 
-
-  constructor(private recipeService: RecipeService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.recipeService.getRecipes().subscribe({
-      next:(res) =>{
-        this.ricette=res;
-      },
-      error: (err) =>{
-        console.error(err);
-      }
-    })
   }
   riceviTitolo(e: any){
     if(!this.titoloRicevuto)

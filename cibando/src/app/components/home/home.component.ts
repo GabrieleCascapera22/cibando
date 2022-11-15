@@ -7,21 +7,12 @@ import { RecipeService } from 'src/app/services/recipe.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  ricette: Recipe[]=[];
   evidenziato=false;
+  page="home";
 
-  constructor(private recipeService: RecipeService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.recipeService.getRecipes().subscribe({
-      next:(res) =>{
-        this.ricette=res;
-        this.ricette=this.ricette.sort((a,b) => b._id - a._id).slice(0,4);
-      },
-      error: (err) =>{
-        console.error(err);
-      }
-    })
   }
 
   onEvidenziazione(){
