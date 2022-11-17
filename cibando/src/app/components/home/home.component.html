@@ -12,3 +12,19 @@
       <app-recipe-card [pageRichiamante]="page"></app-recipe-card>
     </div>
 </section>
+
+
+<!--MODALE DELLA REGISTRAZIONE  -->
+<ng-template [ngIf]="nome">
+ <div id="dati-utente">
+  <h2> grazie {{nome}} per esserti regiestrato, ecco il riepilogo dei tuoi dati:</h2>
+  <ul>
+    <li>nome: <strong>{{nome}}</strong></li>
+    <li> email: <strong>{{email}}</strong> </li>
+  </ul>
+  <button class="btn-btn-primary" (click)="closeModal()">CHIUDI</button>
+</div>
+
+
+
+</ng-template>

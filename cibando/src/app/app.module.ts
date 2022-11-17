@@ -4,6 +4,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import {PasswordModule} from 'primeng/password';
+import { DividerModule } from "primeng/divider";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 
 
@@ -38,7 +41,10 @@ import { RegistrationComponent } from './components/users/registration/registrat
     FontAwesomeModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PasswordModule,
+    DividerModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

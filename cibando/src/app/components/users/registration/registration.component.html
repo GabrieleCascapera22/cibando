@@ -27,86 +27,80 @@
 </div>
 </div> -->
 
-<!-- <div class="registrazione">
-  <form class="col-7"  [formGroup]="form" (ngSubmit)="onSubmit()">
-  <div class="container-nome">
-    <input type="nome" class="form-control-nome" id="nome"  placeholder="scrivi il tuo nome" formControlName="name">
-    <label for="nome">il tuo nome</label>
-    <p class="help is-danger" *ngIf="!form.get('nome').valid && form.get('nome').touched">il campo è obbliatorio</p>
+< <div class="container-sm registrazione col-12">
+  <div class="row">
+    <form class="col-6" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h2>Registrati</h2>
+      <div class="mb-3">
+        <input type="text" class="form-control" id="nome" name="name" placeholder="scrivi il tuo nome"
+          formControlName="name" />
+        <label for="nome" class="form-label"> il tuo nome</label>
+        <p class="help is-danger" *ngIf="!form.get('name').valid && form.get('name').touched">
+          il campo è obbligatorio
+        </p>
+      </div>
+      <div class="mb-3">
+        <input type="email" class="form-control" id="email" name="email" placeholder="scrivi la tua email"
+          formControlName="email" />
+        <label for="email" class="form-label"> la tua email</label>
+        <p class="help is-danger" *ngIf="form.controls['email'].hasError('email')">
+          l'email non è corretta
+        </p>
+        <p class="help is-danger" *ngIf="form.get('email').value === '' && form.get('email').touched">
+          il campo è obbligatorio
+        </p>
+      </div>
+      <div class="mb-3">
+        <!-- <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          placeholder="scrivi la tua password"
+          formControlName="password"/> -->
+        <p class="help is-danger" *ngIf="form.controls['password'].hasError('pattern')">
+          la password deve contenere 1 Maiuscola,1 carattere speciale,1
+          Minuscolo,1 numero
+        </p>
+        <p-password [toggleMask]="true" class="form-control" id="password" name="password" formControlName="password"
+          strongRegex="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$"></p-password>
+        <label for="password" class="form-label">la tua Password</label>
+
+        <p class="help is-danger" *ngIf="!form.get('password').valid && form.get('password').touched">
+          il campo è obbligatorio
+        </p>
+      </div>
+      <div class="mb-3">
+        <input type="password" class="form-control" id="ripetiPassword" name="ripetiPassword" placeholder=""
+          formControlName="ripetiPassword" />
+        <label for="ripetiPassword" class="form-label">ripeti la tua Password</label>
+        <p class="help is-danger" *ngIf="convalidaPassword">
+          la password inserita non combacia
+        </p>
+        <p class="help is-danger" *ngIf="
+            !form.get('ripetiPassword').valid &&
+            form.get('ripetiPassword').touched
+          ">
+          il campo è obbligatorio
+        </p>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="accetto" name="accetto" formControlName="accetto" />
+        <label class="form-check-label" for="accetto">dichiaro di accettare i termini di servizio</label>
+
+        <p class="help is-danger" *ngIf="!form.get('accetto').valid && form.get('accetto').touched">
+          il campo è obbligatorio
+        </p>
+      </div>
+      <div class="bottone">
+        <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
+          registrati
+        </button>
+      </div>
+    </form>
+    <div class="col-6" [ngStyle]="{
+        'background-image':
+          'url(https://www.lospicchiodaglio.it/img/news/sapete-cos-e-il-junk-food.jpg)'
+      }" id="immagine" alt="immagine cibo"></div>
   </div>
-  <div class="container-email">
-    <input type="email" class="form-control-email" id="email"  placeholder="scrivi la tua email"  formControlName="email" >
-    <label class="form-label" for="email">la tua email</label>
-    <p class="help is-danger" *ngIf="form.controls['email'].hasError('email')">il campo è scritto in modo errato</p>
-    <p class="help is-danger" *ngIf="form.controls['email'].hasError('required')">il campo è obbliatorio</p>
   </div>
-  <div class="container-password">
-    <input type="password" class="form-control-password" id="password"  placeholder="scrivi la tua password"  formControlName="password">
-    <label for="password"></label>
-    <p class="help is-danger" *ngIf="!form.get('password').valid && form.get('password').touched">il campo è obbliatorio</p>
-  </div>
-  <div class="container-ripeti-password">
-    <input type="password" class="form-control-ripeti-password" id="ripeti-password"  placeholder=""  formControlName="ripetiPassowrd">
-    <label for="password">ripeti password</label>
-    <p class="help is-danger" *ngIf="!form.get('ripetiPasssword').valid && form.get('ripetiPassword').touched">il campo è obbliatorio</p>
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1"  formControlName="accetto" >
-    <label class="form-check-label" for="accetto">dichiaro di accettare i termi del servizio</label>
-    <p class="help is-danger" *ngIf="!form.get('accetto').valid && form.get('accetto').touched">il campo è obbliatorio</p>
-  </div>
-  <p class="help correct" *ngIf="form.valid">il form è corretto adesso può essere inviato</p>
-  <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Primary</button>
-  </form>
-  <div class="col-5">
-    <img src="https://www.biochetasi.it/wp-content/uploads/2019/09/I-bambini-e-il-cibo-spazzatura.-Meglio-non-esagerare-1-biochetasi.jpg" alt="">
-  </div>
-  </div> -->
-
-<div class="container-sm registrazione col-12">
-      <div class="row">
-        <form class="col-6"  [formGroup]="form" (ngSubmit)="onSubmit()">
-          <h2>Registrati</h2>
-          <div class="mb-3">
-            <input type="text" class="form-control" id="nome" name="name" placeholder="scrivi il tuo nome" formControlName="name">
-            <label for="nome" class="form-label"> il tuo nome</label>
-            <p class="help is-danger" *ngIf="!form.get('name').valid && form.get('name').touched">il campo è obbligatorio</p>
-          </div>
-          <div class="mb-3">
-            <input type="email" class="form-control" id="email" name="email" placeholder="scrivi la tua email" formControlName="email">
-            <label for="email" class="form-label"> la tua email</label>
-            <p class="help is-danger" *ngIf="form.controls['email'].hasError('email')">l'email non è corretta</p>
-            <p class="help is-danger" *ngIf="!form.get('email').valid && form.get('email').touched">il campo è obbligatorio</p>
-          </div>
-          <div class="mb-3">
-            <input type="password" class="form-control" id="password" name="password" placeholder="scrivi la tua password" formControlName="password">
-            <label for="password" class="form-label">la tua Password</label>
-            <p class="help is-danger" *ngIf="!form.get('password').valid && form.get('password').touched">il campo è obbligatorio</p>
-          </div>
-          <div class="mb-3">
-            <input type="password" class="form-control" id="ripetiPassword" name="ripetiPassword" placeholder="" formControlName="ripetiPassword">
-            <label for="ripetiPassword" class="form-label">ripeti la tua Password</label>
-            <p class="help is-danger" *ngIf="!form.get('ripetiPassword').valid && form.get('ripetiPassword').touched">il campo è obbligatorio</p>
-          </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="accetto" name="accetto" formControlName="accetto">
-            <label class="form-check-label" for="accetto">dichiaro di accettare i termini di servizio</label>
-            <p class="help is-danger" *ngIf="!form.get('accetto').valid && form.get('accetto').touched">il campo è obbligatorio</p>
-          </div>
-          <div class="bottone">
-            <button type="submit" class="btn btn-primary" [disabled]="!form.valid">registrati</button>
-          </div>
-        </form>
-        <div class="col-6" [ngStyle]="{ 'background-image': 'url(https://www.lospicchiodaglio.it/img/news/sapete-cos-e-il-junk-food.jpg)'}" id="immagine" alt="immagine cibo">
-        </div>
-  </div>
-
-
-
-
-
-
-
-
-</div>
-
