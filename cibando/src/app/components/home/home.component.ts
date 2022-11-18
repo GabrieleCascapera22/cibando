@@ -31,15 +31,16 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     //recupero i dati dal subject e li imagazzino nelle localStorage
     this.userService.datiUtente.subscribe((res: any) => {
-      localStorage.setItem("nome",res.nome);
-      localStorage.setItem("email",res.email);
-
+      // localStorage.setItem("nome",res.nome);
+      // localStorage.setItem("email",res.email);
+      this.nome = res.nome;
+      this.email= res.email;
     })
-  if(localStorage.getItem('nome'))
-  {
-    this.nome=localStorage.getItem('nome');
-    this.email=localStorage.getItem('email');
-  }
+  // if(localStorage.getItem('nome'))
+  // {
+  //   this.nome=localStorage.getItem('nome');
+  //   this.email=localStorage.getItem('email');
+  // }
 
   }
 

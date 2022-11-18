@@ -16,6 +16,7 @@
 
 <!--MODALE DELLA REGISTRAZIONE  -->
 <ng-template [ngIf]="nome">
+  <div id="contenitore-globale">
  <div id="dati-utente">
   <h2> grazie {{nome}} per esserti regiestrato, ecco il riepilogo dei tuoi dati:</h2>
   <ul>
@@ -24,7 +25,7 @@
   </ul>
   <button class="btn-btn-primary" (click)="closeModal()">CHIUDI</button>
 </div>
-
+</div>
 
 
 </ng-template>

@@ -4,6 +4,10 @@ body {
 font-family: 'Montserrat', sans-serif;
 }
 
+#contenitore-totale{
+  max-width: 1400px!important;
+  margin: auto;
+}
 ngb-carousel.carousel.slide {
 margin-top:-19px;
 margin-bottom: 20px;
@@ -55,7 +59,13 @@ width: 530px;
 
 }
 footer{
-  height: 100px;
+  display: block;
+  float: left;
+clear: both;
+position: relative;
+bottom: 0;
+  width: 100%;
+  height: 60px;
   background-color: #8e210b!important;
 }
 /* Importing Bootstrap SCSS file. */
@@ -70,3 +80,42 @@ footer{
 .p-password-input{
   width: 100%!important;
 }
+
+.container-pagination{
+  display: block;
+  clear: both;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pagination{
+  display: flex;
+  justify-content: center;
+}
+.testo-ricette-totali
+  {
+    margin-bottom: 20px!important;
+  }
+
+  .page-link.active, .active > .page-link{
+    background-color: #8e210b;
+    border:solid #8e210b;
+    color: white!important;
+  }
+
+  .page-item:not(:first-child) .page-link{
+    color: #8e210b;
+  }
+
+.disabled{
+    color: #8e210b!important;
+    a{
+      color: #8e210b!important
+    }
+  }
+
+  .navbar-toggler{
+    margin-right: 20px;
+  }
+
+

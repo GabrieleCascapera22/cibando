@@ -13,6 +13,10 @@ export class RecipeCardComponent implements OnInit {
   percorsoDifficolta = "../../../../assets/images/difficolta-";
   @Output() messaggio= new EventEmitter();
   ricette: Recipe[]=[];
+  page= 1;
+  ricettePerPagina= 4;
+  pagingNumber= 0;
+
 
   constructor(private recipeService: RecipeService) { }
 
@@ -32,9 +36,20 @@ export class RecipeCardComponent implements OnInit {
         console.error(err);
       }
     })
+    this.pagine();
   }
 
   inviaTitolo(titolo:string){
       this.messaggio.emit(titolo);
+  }
+
+  pagine(){
+    let tot;
+    if(this.ricette){
+      tot = this.ricette.length;
+    }
+    this.page=1;
+    this.pagingNumber=0;
+    this.pagingNumber= Math.ceil(this.ricette.length/this.ricettePerPagina/4);
   }
 }

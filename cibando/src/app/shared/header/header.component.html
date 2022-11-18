@@ -2,12 +2,12 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" routerLink="home">
       <img src="../assets/images/icona-cibando.png" class="logo" alt="logo cibando">
-     <span>Cibando</span>
+     <span id="cibando-logo">Cibando</span>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup" [ngbCollapse]="isCollapsed">
       <div class="navbar-nav">
         <a class="nav-item nav-link active" routerLink="home">
           <fa-icon [icon]="iconaHome"></fa-icon>
@@ -15,13 +15,20 @@
         <a class="nav-item nav-link" routerLink="ricette" >
           <fa-icon [icon]="iconaScheda"></fa-icon>
           Ricette</a>
-        <a class="nav-item nav-link"  >
-          <fa-icon [icon]="iconaMail"></fa-icon>
+        <a class="nav-item nav-link"  routerLink="contatti">
+          <fa-icon [icon]="iconaMail" ></fa-icon>
           Contatti</a>
         <a class="nav-item nav-link " routerLink="registrazione" >
           <fa-icon [icon]="iconaRegistrati"></fa-icon>
           Regisrati</a>
       </div>
+      <form class="form-inline my-2 my-lg-0" id="barra-di-ricerca">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="input-barra-ricerca" [(ngModel)]="ricerca">
+        <button class="btn" type="submit" id="bottone-barra-ricerca" (click)="onRicerca()">
+          <i class="pi pi-search" id="lente-barra-ricerca">
+          </i>
+        </button>
+      </form>
     </div>
   </nav>
 </header>
