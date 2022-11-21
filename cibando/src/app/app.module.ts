@@ -8,6 +8,7 @@ import {PasswordModule} from 'primeng/password';
 import { DividerModule } from "primeng/divider";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import {HttpClientModule} from "@angular/common/http";
 
 
 import { AppComponent } from './app.component';
@@ -21,6 +22,7 @@ import { DetailComponent } from './components/recipes/detail/detail.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
 import { RegistrationComponent } from './components/users/registration/registration.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
+import { NewRecipeComponent } from './components/new-recipe/new-recipe.component';
 
 
 @NgModule({
@@ -35,7 +37,8 @@ import { ContactsComponent } from './components/contacts/contacts.component';
     DetailComponent,
     RecipesListComponent,
     RegistrationComponent,
-    ContactsComponent
+    ContactsComponent,
+    NewRecipeComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import { ContactsComponent } from './components/contacts/contacts.component';
     PasswordModule,
     DividerModule,
     BrowserAnimationsModule,
-    NgbCollapseModule
+    NgbCollapseModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

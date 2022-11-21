@@ -39,7 +39,7 @@ header{
 
   #barra-di-ricerca{
     display: flex;
-    margin-left: 45%;
+    margin-left: 25%;
     margin-right: 20px;
 
     #input-barra-ricerca{
@@ -63,5 +63,14 @@ header{
     overflow: visible;
     box-sizing: content-box;
     margin-bottom: 10px;
-}
   }
+
+  #nuovaRicetta{
+
+  }
+
+  .pi-plus{
+    margin-top: 4px;
+    margin-right: 4px;
+  }
+ }

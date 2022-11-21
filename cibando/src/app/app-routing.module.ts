@@ -6,6 +6,7 @@ import { DetailComponent } from './components/recipes/detail/detail.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
 import { RegistrationComponent } from './components/users/registration/registration.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
+import { NewRecipeComponent } from './components/new-recipe/new-recipe.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -16,6 +17,7 @@ const routes: Routes = [
   ]},
   {path:'registrazione',component:RegistrationComponent},
   {path:'contatti',component:ContactsComponent},
+  {path:'nuova-ricetta',component:NewRecipeComponent},
   {path:'**', redirectTo:'home'},
 
 

@@ -4,6 +4,7 @@
       <img src="../assets/images/icona-cibando.png" class="logo" alt="logo cibando">
      <span id="cibando-logo">Cibando</span>
     </a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -21,6 +22,9 @@
         <a class="nav-item nav-link " routerLink="registrazione" >
           <fa-icon [icon]="iconaRegistrati"></fa-icon>
           Regisrati</a>
+          <a class="nav-item nav-link " routerLink="nuova-ricetta" id="nuovaRicetta">
+            <i class="pi pi-plus"></i>
+            Nuova Ricetta</a>
       </div>
       <form class="form-inline my-2 my-lg-0" id="barra-di-ricerca">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="input-barra-ricerca" [(ngModel)]="ricerca">
