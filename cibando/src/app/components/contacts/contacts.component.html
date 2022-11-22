@@ -1,5 +1,29 @@
-<div class="container-fluid" id="contengo-contatti">
-<div [ngStyle]="{'background-image':'url(https://www.faberspa.com/wp-content/uploads/2019/08/cromoterapia-cucinare-cibi-colorati-copertina-min.jpg)'}" id="img"></div>
+<div class="contenitore-contacts">
+  <div class="top">
+    <div class="col-8">
+      <h2 id="testo-alto-sinistra">
+        {{loremIpsum}}
+      </h2>
+    </div>
+    <div class="fluid-container col-4">
+      <div class="card-image" [ngStyle]=" {'background-image': 'url(https://images5.alphacoders.com/878/878863.jpg)' }" id="img-alto-destra" > </div>
+    </div>
+  </div>
+  <div class="bot">
+    <div class="fluid-container col-4">
+      <div class="card-image" [ngStyle]=" {'background-image': 'url(https://romearthotel.com/wp-content/uploads/2022/04/romeartmaprt.jpg)' }" id="img-basso-sinistra" > </div>
+    </div>
+    <div class="col-8">
+      <h2 id="testo-basso-destra">
+        {{loremIpsum}}
+      </h2>
+    </div>
+  </div>
+  <div class="icone">
+    <fa-icon [icon]="twitter"></fa-icon>
+    <fa-icon [icon]="instagram" class="insta"></fa-icon>
+    <fa-icon [icon]="facebook"></fa-icon>
+  </div>
 
 
 </div>

@@ -17,11 +17,19 @@ export class RecipeService {
 
   constructor(private http: HttpClient) { }
 
-  //prendo tutte le ricette
-getRecipes(): Observable<Recipe[]>{
+//   //prendo tutte le ricette
+// getRecipes(): Observable<Recipe[]>{
+//   // return of (RECIPES);
+//   return this.http.get<Recipe[]>(`${this.apiBaseUrl}/`);
+// }
+
+//prendo le ricette tramite pipe
+getRecipes(){
   // return of (RECIPES);
   return this.http.get<Recipe[]>(`${this.apiBaseUrl}/`);
 }
+
+
 
 //metodo con il mok
 // getRecipe(id:number):Observable<Recipe | undefined>{
@@ -45,6 +53,7 @@ getRecipeByTitle(title:string):Observable<Recipe | undefined>{
 
   return this.http.get<Recipe>(`${this.apiBaseUrl}/titolo/${title}`);
   }
+
 
 
 }

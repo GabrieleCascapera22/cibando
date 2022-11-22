@@ -1,7 +1,7 @@
-<div class="container-sm registrazione col-12">
-  <div class="row">
-    <form class="col-10" [formGroup]="form" (ngSubmit)="onSubmit()">
-      <h2>Nuova Ricetta</h2>
+<div class="container-sm nuova-ricetta col-10">
+  <div class="row" id="contenitore-row">
+    <form class="col-8" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h2     id="nuova-ricetta">Nuova Ricetta</h2>
 
       <div class="mb-3">
         <input type="text" class="form-control" id="titolo" name="titolo" placeholder="scrivi il titolo della ricetta"
@@ -39,7 +39,7 @@
         </p>
       </div>
 
-      <div class="mb-3 form-check">
+      <div class="mb-3 form-check" id="checkBox">
         <input type="checkbox" class="form-check-input" id="published" name="published" formControlName="published" />
         <label class="form-check-label" for="published">publicazione ricetta</label>
 
@@ -49,7 +49,7 @@
       </div>
 
       <div class="bottone">
-        <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
+        <button type="submit" class="btn btn-primary" [disabled]="!form.valid" >
           crea Ricetta
         </button>
       </div>
@@ -59,13 +59,35 @@
   </div>
 
 
-  <div>
-    <div id="contenitore-globale">
-  <h2>congratulazioni la tua ricetta è stata inserita</h2>
-  <button class="btn" cursor="pointer" (click)="nuovaRicetta()" >nuova</button>
-  <button class="btn" cursor="pointer" (click)="descrizioneNuovaRicetta()" >nuova</button>
-  </div>
 
-
-  </div>
 </div>
+<ng-template [ngIf]="modal">
+  <div id="contenitore-globale">
+    <div class="contieni-card-congratulazioni">
+      <div class="congratulazioni">
+        <h2>Congratulazioni la tua ricetta è stata inserita</h2>
+      </div>
+      <div class="container-card">
+        <div class="card">
+          <div class="card-image" [ngStyle]=" {'background-image': 'url(' + form.value.image +')'}"> </div>
+          <div class="card-body">
+            <h5 class="card-title">{{form.value.title}}</h5>
+            <p class="card-text">{{form.value.description | slice: 0:250}}...</p>
+            <img [src]="percorsoDifficolta + form.value.difficulty+'.png'" class='stelline' alt="difficoltà">
+            <!-- [router-link]="'dettaglio/'+recipe.title+'/'+recipe._id">dettaglio  -->
+          </div>
+        </div>
+       </div>
+
+  <button class="btn bottone-nuova" cursor="pointer" (click)="nuovaRicetta()">nuova ricetta</button>
+  <button class="btn croce" cursor="pointer" (click)="vaiRicette()">
+    <i class="pi pi-times-circle"></i>
+  </button>
+  </div>
+
+
+    </div>
+
+
+
+</ng-template>

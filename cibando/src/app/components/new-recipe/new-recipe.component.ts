@@ -17,12 +17,13 @@ export class NewRecipeComponent implements OnInit {
       description: new FormControl ('', [Validators.required]),
       image: new FormControl ('', [Validators.required]),
       difficulty: new FormControl ('', [Validators.required]),
-      published: new FormControl ('', [Validators.required])
+      published: new FormControl ('')
     }
   );
 
-  banner:boolean;
+  modal:boolean;
   ricettaCorrente:Recipe | undefined;
+  percorsoDifficolta = "../../../../assets/images/difficolta-";
 
 
 
@@ -36,24 +37,18 @@ export class NewRecipeComponent implements OnInit {
     console.log(this.form.value);
     const ricetta= this.form.value;
     this.recipeService.postRecipe(ricetta).subscribe();
-    this.banner=true;
+    this.modal=true;
   }
 
   nuovaRicetta(){
-    this.router.navigate(['nuova-ricetta']);
+    // this.router.navigate(['nuova-ricetta']);
+    this.modal=false;
+    this.form.reset();
   }
 
-  descrizioneNuovaRicetta(){
-    this.recipeService.getRecipeByTitle('lasagna').subscribe({
-      next:(res) =>{
-        this.ricettaCorrente=res
-        this.router.navigate(['descrizione/'+res.title+'/'+ res._id]);
-      },
-      error: (err) =>{
-        console.error(err);
-      }
-    })
-
+  vaiRicette(){
+    this.router.navigate(['ricette']);
   }
+
 
 }

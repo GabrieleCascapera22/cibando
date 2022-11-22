@@ -33,7 +33,7 @@
       <h2>Registrati</h2>
       <div class="mb-3">
         <input type="text" class="form-control" id="nome" name="name" placeholder="scrivi il tuo nome"
-          formControlName="name" />
+          formControlName="name"   appChangeColor/>
         <label for="nome" class="form-label"> il tuo nome</label>
         <p class="help is-danger" *ngIf="!form.get('name').valid && form.get('name').touched">
           il campo è obbligatorio

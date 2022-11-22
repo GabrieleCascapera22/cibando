@@ -1,9 +1,69 @@
-#contengo-contatti{
+.contenitore-contacts{
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
 
-  #img{
-    height: 400px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+.top{
+  display: flex;
+  margin-bottom: 20px;
+  .col-8{
+    #testo-alto-sinistra{
+      margin-left: 20px;
+      font-size: 22px;
+      font-weight: 400;
+    }
   }
+    #img-alto-destra{
+      height: 300px;
+      margin-bottom: 20px;
+      margin-left: 20px;
+      border-radius: 20px 0px 0px 20px;
+      border: 1px solid  #8e210b ;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+    }
+}
+.bot{
+  clear: both;
+  display: flex;
+  margin-bottom: 20px;
+  .col-8{
+    #testo-basso-destra{
+      margin-left: 20px;
+      font-size: 22px;
+      font-weight: 400;
+    }
+  }
+    #img-basso-sinistra{
+      height: 300px;
+      margin-bottom: 20px;
+      margin-right: 20px;
+      border-radius: 0px 20px 20px 0px;
+      border: 1px solid  #8e210b ;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+    }
+
+}
+
+.icone{
+  display: flex;
+flex-direction: row;
+justify-content: flex-end;
+  height: 40px;
+  font-size: 40px;
+  margin-bottom: 20px;
+  margin-top: -73px;
+  margin-right: 20px;
+
+  fa-icon{
+    margin: 4px;
+    color: #8e210b;
+  }
+}
+
 }

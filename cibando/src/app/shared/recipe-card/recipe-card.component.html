@@ -1,13 +1,13 @@
 <div class="container-pagination" *ngIf="pageRichiamante != 'home'">
   <div class="testo-ricette-totali">
-   <strong>{{ricettePerPagina}}</strong> Ricette su un totale di <strong>{{ricette.length}}</strong> <br> pagina corrente <strong>{{page}}</strong>
+   <strong>{{ricettePerPagina}}</strong> Ricette su un totale di <strong>{{totRicette.length}}</strong> <br> pagina corrente <strong>{{page}}</strong>
   </div>
-  <ngb-pagination [collectionSize]="ricette.length * 2 + (ricettePerPagina * 2)" [(page)]="page" aria-label="default pagination" >
+  <ngb-pagination [collectionSize]="totRicette.length * 2 + (ricettePerPagina * 2)" [(page)]="page" aria-label="default pagination" >
   </ngb-pagination>
 </div>
 <div class="container-cards">
 
-  <div class="card"  *ngFor="let recipe of ricette | slice: (page * ricettePerPagina) - ricettePerPagina : page * ricettePerPagina">
+  <div class="card"  *ngFor="let recipe of ricette$ | async | slice: (page * ricettePerPagina) - ricettePerPagina : page * ricettePerPagina">
     <div class="card-image" [ngStyle]=" {'background-image': 'url('+recipe.image+')'}" (click)="inviaTitolo(recipe.title)"> </div>
     <div class="card-body">
       <h5 class="card-title">{{recipe.title}}</h5>
@@ -20,7 +20,7 @@
   </div>
 
   <div class="container-pagination" *ngIf="pageRichiamante != 'home'">
-    <ngb-pagination [collectionSize]="ricette.length * 2 + (ricettePerPagina * 2)" [(page)]="page" aria-label="default pagination" >
+    <ngb-pagination [collectionSize]="totRicette.length * 2 + (ricettePerPagina * 2)" [(page)]="page" aria-label="default pagination" >
 
     </ngb-pagination>
 
