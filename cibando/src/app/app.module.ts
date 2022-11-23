@@ -9,6 +9,7 @@ import { DividerModule } from "primeng/divider";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule} from "@angular/common/http";
+import {ToastModule} from 'primeng/toast';
 
 
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ import { RegistrationComponent } from './components/users/registration/registrat
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { NewRecipeComponent } from './components/new-recipe/new-recipe.component';
 import { ChangeColorDirective } from './directives/change-color.directive';
+import { LoginComponent } from './components/users/login/login.component';
 
 
 @NgModule({
@@ -40,7 +42,8 @@ import { ChangeColorDirective } from './directives/change-color.directive';
     RegistrationComponent,
     ContactsComponent,
     NewRecipeComponent,
-    ChangeColorDirective
+    ChangeColorDirective,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ import { ChangeColorDirective } from './directives/change-color.directive';
     DividerModule,
     BrowserAnimationsModule,
     NgbCollapseModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

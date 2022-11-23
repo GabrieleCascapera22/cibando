@@ -39,9 +39,8 @@ header{
 
   #barra-di-ricerca{
     display: flex;
-    margin-left: 25%;
-    margin-right: 20px;
-
+    position: absolute;
+    right: 20px;
     #input-barra-ricerca{
       margin-right: 10px;
     }
@@ -66,11 +65,20 @@ header{
   }
 
   #nuovaRicetta{
+    margin-top: -7px;
 
   }
 
   .pi-plus{
     margin-top: 4px;
     margin-right: 4px;
+  }
+  .pi-sign-out{
+    margin-top: 4px;
+    margin-left: 4px;
+  }
+  .esci{
+    display: contents!important;
+    margin-left: 4px!important;
   }
  }

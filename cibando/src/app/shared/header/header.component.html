@@ -10,21 +10,32 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup" [ngbCollapse]="isCollapsed">
       <div class="navbar-nav">
+
         <a class="nav-item nav-link active" routerLink="home">
           <fa-icon [icon]="iconaHome"></fa-icon>
           Home</a>
+
         <a class="nav-item nav-link" routerLink="ricette" >
           <fa-icon [icon]="iconaScheda"></fa-icon>
           Ricette</a>
+
         <a class="nav-item nav-link"  routerLink="contatti">
           <fa-icon [icon]="iconaMail" ></fa-icon>
           Contatti</a>
-        <a class="nav-item nav-link " routerLink="registrazione" >
+
+        <a class="nav-item nav-link " routerLink="login" *ngIf="!authService.isLogged()" >
           <fa-icon [icon]="iconaRegistrati"></fa-icon>
-          Regisrati</a>
-          <a class="nav-item nav-link " routerLink="nuova-ricetta" id="nuovaRicetta">
-            <i class="pi pi-plus"></i>
-            Nuova Ricetta</a>
+          Accedi </a>
+
+        <a class="nav-item nav-link " routerLink="login" *ngIf="authService.isLogged()" >
+          <fa-icon [icon]="iconaRegistrati"></fa-icon>
+        <span id="name">ciao {{user.name}}</span>
+        <a class="nav-item nav-link " routerLink="nuova-ricetta" id="nuovaRicetta" *ngIf="user.role ==='admin'">
+          <i class="pi pi-plus"></i>
+          Nuova Ricetta</a>
+          <a class="nave-item nav-link esci" routerLink="home" (click)="logout()" style="color: #cc9b91;"> Esci <i class="pi pi-sign-out"></i></a>
+        </a>
+
       </div>
       <form class="form-inline my-2 my-lg-0" id="barra-di-ricerca">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="input-barra-ricerca" [(ngModel)]="ricerca">
