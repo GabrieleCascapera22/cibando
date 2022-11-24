@@ -13,8 +13,7 @@
       </div>
 
       <div class="mb-3">
-        <input type="text" class="form-control" id="descrizione" name="descrizione" placeholder="scrivi la descrizione della ricetta"
-          formControlName="description" />
+          <ckeditor [editor]="editor" [config]="editorConfig" class="form-control description" name="descrizione"formControlName="description"></ckeditor>
         <label for="descrizione" class="form-label">descrizione</label>
         <p class="help is-danger" *ngIf="!form.get('description').valid && form.get('description').touched">
           il campo è obbligatorio

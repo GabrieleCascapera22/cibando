@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule} from "@angular/common/http";
 import {ToastModule} from 'primeng/toast';
-
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 import { AppComponent } from './app.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
@@ -26,6 +26,7 @@ import { ContactsComponent } from './components/contacts/contacts.component';
 import { NewRecipeComponent } from './components/new-recipe/new-recipe.component';
 import { ChangeColorDirective } from './directives/change-color.directive';
 import { LoginComponent } from './components/users/login/login.component';
+import { ProfileComponent } from './components/users/profile/profile.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { LoginComponent } from './components/users/login/login.component';
     ContactsComponent,
     NewRecipeComponent,
     ChangeColorDirective,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,8 @@ import { LoginComponent } from './components/users/login/login.component';
     BrowserAnimationsModule,
     NgbCollapseModule,
     HttpClientModule,
-    ToastModule
+    ToastModule,
+    CKEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
 
             this.authService.saveStorage(res);
             this.messageService.add({severity:'success', summary:'Successo', detail:'Login effettuato con successo',  life:2000});
-            // this.router.navigate(['home']);
+            this.router.navigate(['home']);
           }else{
             this.loginError = "email o password errati";
             this.messageService.add({severity:'error', summary:'errore', detail:'email o password errati',  life:2000});

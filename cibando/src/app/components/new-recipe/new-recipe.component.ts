@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-new-recipe',
@@ -10,6 +11,42 @@ import { Router } from '@angular/router';
   styleUrls: ['./new-recipe.component.scss']
 })
 export class NewRecipeComponent implements OnInit {
+
+  editor = ClassicEditor;
+
+  editorConfig = {
+    toolbar: {
+        items: [
+            'bold',
+            'italic',
+            'link',
+            'bulletedList',
+            'numberedList',
+            '|',
+            '|',
+            'codeBlock',
+            'blockQuote',
+            'undo',
+            'redo',
+        ]
+    },
+    image: {
+      toolbar: [
+          'imageStyle:full',
+          'imageStyle:side',
+          '|',
+          'imageTextAlternative'
+      ]
+  },
+  table: {
+      contentToolbar: [
+          'tableColumn',
+          'tableRow',
+          'mergeTableCells'
+      ]
+  },
+  height: 300,
+};
 
   form = new FormGroup(
     {

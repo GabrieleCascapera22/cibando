@@ -1,3 +1,5 @@
+@import'../../styles/colori.scss';
+
 header{
   display: flex;
   flex-direction: column;
@@ -6,7 +8,7 @@ header{
   margin-bottom: 20px;
 
   .bg-dark{
-    background-color: #8e210b!important;
+    background-color: $primary-color1!important;
 
     .logo{
       width:80px ;
@@ -28,12 +30,12 @@ header{
   }
 
   .navbar-brand span {
-    // display: block;
-    // float: right;
-    // margin-top: 21px;
-    // font-size: 25px;
-    // font-weight: bold;
-    // margin-right: 25px;
+    display: block;
+    float: right;
+    margin-top: 21px;
+    font-size: 25px;
+    font-weight: bold;
+    margin-right: 25px;
 
   }
 
@@ -65,7 +67,9 @@ header{
   }
 
   #nuovaRicetta{
-    margin-top: -7px;
+    position: absolute;
+    right: 20%;
+
 
   }
 
@@ -78,7 +82,15 @@ header{
     margin-left: 4px;
   }
   .esci{
-    display: contents!important;
-    margin-left: 4px!important;
+    margin-top: -8px!important;
+    margin-left: 20px!important;
+  }
+
+  #profilo{
+    margin-left: 10px!important;
+  }
+  .utente{
+    margin-top: -8px!important;
+    margin-left: 20px!important;
   }
  }

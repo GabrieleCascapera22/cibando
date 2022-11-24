@@ -5,7 +5,7 @@
   ></div>
   <div class="container-testo">
     <h2 class="titolo">{{ ricetta.title }}</h2>
-    <p class="descrizione">{{ ricetta.description }}</p>
+    <p class="descrizione"><span [innerHTML]="ricetta.description"></span></p>
   </div>
   <div class="difficolta">
     <strong>difficoltà:</strong>

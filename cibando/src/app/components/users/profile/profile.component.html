@@ -1,0 +1,15 @@
+<div *ngIf="user">
+  <div id="contiene-profilo" >
+    <h2>Ciao {{user.name}}</h2>
+    <h3 style="color:#8e210b ;">ecco il riepilogo dei tuoi dati</h3>
+    <ul class="elenco">
+      <li><strong>nome: </strong>{{user.name}}</li>
+      <li><strong>email: </strong>{{user.email}}</li>
+      <li><strong>ruolo: </strong>{{user.role}}</li>
+      <li><strong>account creato il: </strong>{{dataRegistrazione}}</li>
+      <li><strong>profilo aggiornato il: </strong>{{dataUpdate}}</li>
+    </ul>
+  </div>
+</div>
+
+

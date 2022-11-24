@@ -27,18 +27,22 @@
           <fa-icon [icon]="iconaRegistrati"></fa-icon>
           Accedi </a>
 
-        <a class="nav-item nav-link " routerLink="login" *ngIf="authService.isLogged()" >
+        <a class="nav-item nav-link " *ngIf="authService.isLogged()" >
           <fa-icon [icon]="iconaRegistrati"></fa-icon>
         <span id="name">ciao {{user.name}}</span>
-        <a class="nav-item nav-link " routerLink="nuova-ricetta" id="nuovaRicetta" *ngIf="user.role ==='admin'">
+
+        <a class="nave-item nav-link utente" id="utente" routerLink="/profilo" >profilo</a>
+
+        <a class="nave-item nav-link esci" routerLink="home" (click)="logout()" > Esci <i class="pi pi-sign-out"></i></a>
+      </a>
+        <a class="nav-item nav-link " routerLink="/nuova-ricetta" id="nuovaRicetta" *ngIf="user.role ==='admin'">
           <i class="pi pi-plus"></i>
           Nuova Ricetta</a>
-          <a class="nave-item nav-link esci" routerLink="home" (click)="logout()" style="color: #cc9b91;"> Esci <i class="pi pi-sign-out"></i></a>
-        </a>
+
 
       </div>
       <form class="form-inline my-2 my-lg-0" id="barra-di-ricerca">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="input-barra-ricerca" [(ngModel)]="ricerca">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="input-barra-ricerca" name="ricerca" [(ngModel)]="ricerca">
         <button class="btn" type="submit" id="bottone-barra-ricerca" (click)="onRicerca()">
           <i class="pi pi-search" id="lente-barra-ricerca">
           </i>

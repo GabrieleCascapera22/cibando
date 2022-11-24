@@ -126,3 +126,8 @@ bottom: 0;
     width: 100%!important;
     border: 0px!important;
   }
+
+  .description .ck-editor__editable{
+    min-height: 200px!important;
+    max-height: 200px!important;
+  }
