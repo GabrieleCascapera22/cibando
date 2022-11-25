@@ -50,5 +50,6 @@ export class HeaderComponent implements OnInit, DoCheck {
 
   onRicerca() {
     this.recipeService.wantedRicetta.next(this.ricerca);
+    this.router.navigate(['ricette/result/'])
   }
 }

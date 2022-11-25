@@ -10,13 +10,16 @@ import { NewRecipeComponent } from './components/new-recipe/new-recipe.component
 import { LoginComponent } from './components/users/login/login.component';
 import { ProfileComponent } from './components/users/profile/profile.component';
 import { LoggedInGuard } from './logged-in.guard';
+import { ResultComponent } from './components/recipes/result/result.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'home',component:HomeComponent},
   { path: 'ricette',component:RecipesComponent,children:[
     {path:'dettaglio/:title/:_id',component:DetailComponent},
+    {path:'result',component:ResultComponent},
     {path:'',pathMatch:'full',component:RecipesListComponent}
+
   ]},
   {path:'registrazione',component:RegistrationComponent},
   {path:'contatti',component:ContactsComponent},

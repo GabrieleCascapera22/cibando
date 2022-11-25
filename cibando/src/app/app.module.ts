@@ -27,6 +27,7 @@ import { NewRecipeComponent } from './components/new-recipe/new-recipe.component
 import { ChangeColorDirective } from './directives/change-color.directive';
 import { LoginComponent } from './components/users/login/login.component';
 import { ProfileComponent } from './components/users/profile/profile.component';
+import { ResultComponent } from './components/recipes/result/result.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { ProfileComponent } from './components/users/profile/profile.component';
     NewRecipeComponent,
     ChangeColorDirective,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,

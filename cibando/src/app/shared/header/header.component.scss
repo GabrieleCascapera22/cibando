@@ -41,8 +41,8 @@ header{
 
   #barra-di-ricerca{
     display: flex;
-    position: absolute;
-    right: 20px;
+    position: sticky;
+   padding-left: 130px;
     #input-barra-ricerca{
       margin-right: 10px;
     }
@@ -67,8 +67,8 @@ header{
   }
 
   #nuovaRicetta{
-    position: absolute;
-    right: 20%;
+    position: sticky;
+
 
 
   }
@@ -92,5 +92,13 @@ header{
   .utente{
     margin-top: -8px!important;
     margin-left: 20px!important;
+  }
+ }
+
+ @media only screen and (min-width: 0px) and (max-width: 480px){
+  #barra-di-ricerca{
+    display: flex!important;
+    position: sticky!important;
+   padding-left: 0px!important;
   }
  }

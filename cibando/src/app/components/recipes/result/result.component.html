@@ -1,0 +1,17 @@
+<div class="container-cards" *ngIf="ricette.length >0">
+
+  <div class="card"  *ngFor="let recipe of ricette">
+    <div class="card-image" [ngStyle]=" {'background-image': 'url('+recipe.image+')'}"> </div>
+    <div class="card-body">
+      <h5 class="card-title">{{recipe.title}}</h5>
+      <!-- <p class="card-text">{{recipe.description | slice: 0:250}}...</p> -->
+      <p class="card-text"><span [innerHTML]="recipe.description | slice: 0:250"></span></p>
+      <a routerLink="/ricette/dettaglio/{{recipe.title}}/{{recipe._id}}" class="btn btn-primary">visualizza</a>
+      <img [src]="percorsoDifficolta + recipe.difficulty+'.png'" class='stelline' alt="difficoltà">
+      <!-- [router-link]="'dettaglio/'+recipe.title+'/'+recipe._id">dettaglio  -->
+    </div>
+  </div>
+  </div>
+  <div *ngIf="ricette.length == 0" class="not-found">
+   <div id="spiacenti"> siamo spiacenti ricetta non trovata</div>
+  </div>
