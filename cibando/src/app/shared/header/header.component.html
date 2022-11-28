@@ -23,7 +23,7 @@
           <fa-icon [icon]="iconaMail" ></fa-icon>
           Contatti</a>
 
-        <a class="nav-item nav-link " routerLink="login" *ngIf="!authService.isLogged()" >
+        <a class="nav-item nav-link "(click)="open(modal2,'accedi')" *ngIf="!authService.isLogged()" >
           <fa-icon [icon]="iconaRegistrati"></fa-icon>
           Accedi </a>
 
@@ -33,9 +33,9 @@
 
         <a class="nave-item nav-link utente" id="utente" routerLink="/profilo" >profilo</a>
 
-        <a class="nave-item nav-link esci" routerLink="home" (click)="logout()" > Esci <i class="pi pi-sign-out"></i></a>
+        <a class="nave-item nav-link esci" (click)="open(modal1,'esci')" cursor="pointer"> Esci <i class="pi pi-sign-out"></i></a>
       </a>
-        <a class="nav-item nav-link " routerLink="/nuova-ricetta" id="nuovaRicetta" *ngIf="user.role ==='admin'">
+        <a class="nav-item nav-link " routerLink="/ricette/nuova-ricetta" id="nuovaRicetta" *ngIf="user?.role ==='admin'">
           <i class="pi pi-plus"></i>
           Nuova Ricetta</a>
 
@@ -51,3 +51,33 @@
     </div>
   </nav>
 </header>
+
+
+
+
+
+
+<ng-template #modal1 let-modal>
+  <div class="modal-header">
+    <button type="button" class="btn-close" aria-label="close" (click)="modal.dismiss()"></button>
+  </div>
+  <div class="modal-body">
+    ssd
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn" (click)="modal.dismiss()">Annulla</button>
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close()" ngbAutofocus>Logout</button>
+  </div>
+</ng-template>
+
+<ng-template #modal2 let-modal>
+  <div class="modal-header">
+    <button type="button" class="btn-close" aria-label="close" (click)="modal.dismiss()"></button>
+  </div>
+  <div class="modal-body">
+  <app-login (chiudi)="modal.dismiss()"></app-login>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn" (click)="modal.dismiss()">Annulla</button>
+  </div>
+</ng-template>

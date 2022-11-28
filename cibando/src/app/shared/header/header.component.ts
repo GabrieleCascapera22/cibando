@@ -6,6 +6,7 @@ import { faHouzz } from '@fortawesome/free-brands-svg-icons';
 import { faCircleUser } from '@fortawesome/free-regular-svg-icons';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -27,10 +28,12 @@ export class HeaderComponent implements OnInit, DoCheck {
   ricerca:string;
 
 
+
   constructor(
     private recipeService: RecipeService,
     private router:Router,
-    public authService: AuthService) { }
+    public authService: AuthService,
+    private modalService: NgbModal) { }
 
   ngOnInit(): void {
 
@@ -51,5 +54,28 @@ export class HeaderComponent implements OnInit, DoCheck {
   onRicerca() {
     this.recipeService.wantedRicetta.next(this.ricerca);
     this.router.navigate(['ricette/result/'])
+  }
+
+
+  // chiudiModale(e){
+  //   if(e){
+  //     this.modalService.dismissAll();
+  //   }
+  // }
+
+  open(content: any,azioneDaEseguire?:string,id?: number,titolo?: string){
+    let idNumber= id;
+    let title= titolo;
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title',size: 'lg',centered: true}).result.then((res) => {
+      console.log('azione da eseguire')
+      if(azioneDaEseguire === "esci"){
+        this.logout();
+      }
+      if(azioneDaEseguire === "accedi")
+      {
+      }
+    }).catch((res) => {
+        console.log('nessuna azione eseguita')
+      })
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import {MessageService} from 'primeng/api';
@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   loginError:string ='';
   user:any;
-
+  @Output() chiudi = new EventEmitter;
 
   constructor(
     private authService:AuthService,
@@ -34,7 +34,8 @@ export class LoginComponent implements OnInit {
 
             this.authService.saveStorage(res);
             this.messageService.add({severity:'success', summary:'Successo', detail:'Login effettuato con successo',  life:2000});
-            this.router.navigate(['home']);
+            this.chiudi.emit(true);
+
           }else{
             this.loginError = "email o password errati";
             this.messageService.add({severity:'error', summary:'errore', detail:'email o password errati',  life:2000});

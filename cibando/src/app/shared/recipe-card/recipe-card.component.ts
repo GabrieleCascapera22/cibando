@@ -31,6 +31,7 @@ export class RecipeCardComponent implements OnInit {
 
       this.ricette$ = this.recipeService.getRecipes().pipe(
         map(res => res.filter(ricetteFiltrate => ricetteFiltrate.difficulty < 6)),
+        map(res => res.sort((a,b) => b._id-a._id)),
         map(res => res.slice(0,4)),
         map(res => this.totRicette = res),
 
@@ -38,6 +39,7 @@ export class RecipeCardComponent implements OnInit {
 
     this.ricette$ = this.recipeService.getRecipes().pipe(
       map(res => res.filter(ricetteFiltrate => ricetteFiltrate.difficulty < 6)),
+      map(res => res.sort((a,b) => b._id-a._id)),
       map(res => this.totRicette = res),
 
     )}
